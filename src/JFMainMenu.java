@@ -34,25 +34,25 @@ public class JFMainMenu extends JFrame {
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
         JButton startGame = new JButton("Start Game");
-        Dimension d = new Dimension(100,60);
-        startGame.setMaximumSize(d);
-        startGame.setPreferredSize(d);
+        Dimension buttonDimension = new Dimension(100,60);
+        startGame.setMaximumSize(buttonDimension);
+        startGame.setPreferredSize(buttonDimension);
         startGame.setAlignmentX(Component.CENTER_ALIGNMENT);
         middleContainer.add(startGame);
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
         JButton settings = new JButton("Settings");
-        settings.setMaximumSize(d);
-        settings.setPreferredSize(d);
+        settings.setMaximumSize(buttonDimension);
+        settings.setPreferredSize(buttonDimension);
         settings.setAlignmentX(Component.CENTER_ALIGNMENT);
         middleContainer.add(settings);
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
         JButton exit = new JButton("Exit");
-        exit.setMaximumSize(d);
-        exit.setPreferredSize(d);
+        exit.setMaximumSize(buttonDimension);
+        exit.setPreferredSize(buttonDimension);
         exit.setAlignmentX(Component.CENTER_ALIGNMENT);
         middleContainer.add(exit);
 
