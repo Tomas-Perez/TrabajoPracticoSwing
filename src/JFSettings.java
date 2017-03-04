@@ -9,7 +9,6 @@ public class JFSettings extends JFrame{
 
     public JFSettings(){
         super("Settings");
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setLayout(new BoxLayout(getContentPane(),BoxLayout.Y_AXIS));
@@ -86,6 +85,8 @@ public class JFSettings extends JFrame{
 
         getContentPane().add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
+        setLocationRelativeTo(null);
+        setResizable(false);
         pack();
     }
 

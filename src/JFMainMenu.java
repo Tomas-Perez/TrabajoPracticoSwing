@@ -26,18 +26,20 @@ public class JFMainMenu extends JFrame {
 
         getContentPane().add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
+        //Title
         JLabel title = new JLabel("Trabajo Practico Swing");
         title.setFont(new Font("Title", Font.PLAIN, 55));
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
         middleContainer.add(title);
 
-
+        //Subtitle
         JLabel subtitle = new JLabel("Tomas Perez Molina y Manuel Pedrozo");
         subtitle.setAlignmentX(Component.CENTER_ALIGNMENT);
         middleContainer.add(subtitle);
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
+        //Start Game
         startGameButton = new JButton("Start Game");
         Dimension buttonDimension = new Dimension(100,60);
         startGameButton.setMaximumSize(buttonDimension);
@@ -47,6 +49,7 @@ public class JFMainMenu extends JFrame {
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
+        //Settings
         settingsButton = new JButton("Settings");
         settingsButton.setMaximumSize(buttonDimension);
         settingsButton.setPreferredSize(buttonDimension);
@@ -55,6 +58,7 @@ public class JFMainMenu extends JFrame {
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
+        //Exit
         exitButton = new JButton("Exit");
         exitButton.setMaximumSize(buttonDimension);
         exitButton.setPreferredSize(buttonDimension);
@@ -64,6 +68,7 @@ public class JFMainMenu extends JFrame {
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
         setLocationRelativeTo(null);
+        setResizable(false);
         pack();
     }
 

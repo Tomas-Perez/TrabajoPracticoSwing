@@ -53,6 +53,7 @@ public class JFGameMenu extends JFrame{
 
 
         setLocationRelativeTo(null);
+        setResizable(false);
         pack();
     }
 
