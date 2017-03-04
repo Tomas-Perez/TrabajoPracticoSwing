@@ -2,6 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class JFMainMenu extends JFrame {
+
+    private JButton startGameButton;
+    private JButton settingsButton;
+    private JButton exitButton;
+
     public JFMainMenu() throws HeadlessException {
         super("Main Menu");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,28 +38,28 @@ public class JFMainMenu extends JFrame {
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
-        JButton startGame = new JButton("Start Game");
+        startGameButton = new JButton("Start Game");
         Dimension buttonDimension = new Dimension(100,60);
-        startGame.setMaximumSize(buttonDimension);
-        startGame.setPreferredSize(buttonDimension);
-        startGame.setAlignmentX(Component.CENTER_ALIGNMENT);
-        middleContainer.add(startGame);
+        startGameButton.setMaximumSize(buttonDimension);
+        startGameButton.setPreferredSize(buttonDimension);
+        startGameButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        middleContainer.add(startGameButton);
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
-        JButton settings = new JButton("Settings");
-        settings.setMaximumSize(buttonDimension);
-        settings.setPreferredSize(buttonDimension);
-        settings.setAlignmentX(Component.CENTER_ALIGNMENT);
-        middleContainer.add(settings);
+        settingsButton = new JButton("Settings");
+        settingsButton.setMaximumSize(buttonDimension);
+        settingsButton.setPreferredSize(buttonDimension);
+        settingsButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        middleContainer.add(settingsButton);
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
-        JButton exit = new JButton("Exit");
-        exit.setMaximumSize(buttonDimension);
-        exit.setPreferredSize(buttonDimension);
-        exit.setAlignmentX(Component.CENTER_ALIGNMENT);
-        middleContainer.add(exit);
+        exitButton = new JButton("Exit");
+        exitButton.setMaximumSize(buttonDimension);
+        exitButton.setPreferredSize(buttonDimension);
+        exitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        middleContainer.add(exitButton);
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
@@ -63,4 +68,15 @@ public class JFMainMenu extends JFrame {
         setVisible(true);
     }
 
+    public JButton getStartGameButton() {
+        return startGameButton;
+    }
+
+    public JButton getSettingsButton() {
+        return settingsButton;
+    }
+
+    public JButton getExitButton() {
+        return exitButton;
+    }
 }

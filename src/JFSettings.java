@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class JFSettings extends JFrame{
 
-    JButton backBtn;
+    JButton backButton;
     JRadioButton sOnRbutton,sOffRbutton,mOnRbutton,mOffRbutton;
     JCheckBox shadowsCb,antialiasingCb;
 
@@ -77,12 +77,12 @@ public class JFSettings extends JFrame{
         getContentPane().add(graphicsCbPanel);
 
         //Back
-        backBtn = new JButton("Back");
+        backButton = new JButton("Back");
         Dimension buttonDimension = new Dimension(150,30);
-        backBtn.setMaximumSize(buttonDimension);
-        backBtn.setPreferredSize(buttonDimension);
-        backBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
-        getContentPane().add(backBtn);
+        backButton.setMaximumSize(buttonDimension);
+        backButton.setPreferredSize(buttonDimension);
+        backButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        getContentPane().add(backButton);
 
         getContentPane().add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
@@ -90,8 +90,8 @@ public class JFSettings extends JFrame{
         setVisible(true);
     }
 
-    public JButton getBackBtn() {
-        return backBtn;
+    public JButton getBackButton() {
+        return backButton;
     }
 
     public JRadioButton getsOnRbutton() {

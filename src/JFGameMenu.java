@@ -6,6 +6,9 @@ import java.io.File;
 import java.io.IOException;
 
 public class JFGameMenu extends JFrame{
+
+    private JButton backButton;
+
     public JFGameMenu() throws HeadlessException {
         super("Game");
 
@@ -39,12 +42,12 @@ public class JFGameMenu extends JFrame{
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
-        JButton back = new JButton("Back");
+        backButton = new JButton("Back");
         Dimension buttonDimension = new Dimension(100,60);
-        back.setMaximumSize(buttonDimension);
-        back.setPreferredSize(buttonDimension);
-        back.setAlignmentX(Component.CENTER_ALIGNMENT);
-        middleContainer.add(back);
+        backButton.setMaximumSize(buttonDimension);
+        backButton.setPreferredSize(buttonDimension);
+        backButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        middleContainer.add(backButton);
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
@@ -52,5 +55,9 @@ public class JFGameMenu extends JFrame{
         setLocationRelativeTo(null);
         pack();
         setVisible(true);
+    }
+
+    public JButton getBackButton() {
+        return backButton;
     }
 }
