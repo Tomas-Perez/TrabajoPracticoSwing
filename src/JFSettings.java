@@ -87,7 +87,6 @@ public class JFSettings extends JFrame{
         getContentPane().add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
         pack();
-        setVisible(true);
     }
 
     public JButton getBackButton() {
@@ -116,5 +115,13 @@ public class JFSettings extends JFrame{
 
     public JCheckBox getAntialiasingCb() {
         return antialiasingCb;
+    }
+
+    public void showSelf(){
+        setVisible(true);
+    }
+
+    public void hideSelf(){
+        setVisible(false);
     }
 }

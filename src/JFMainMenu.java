@@ -65,7 +65,6 @@ public class JFMainMenu extends JFrame {
 
         setLocationRelativeTo(null);
         pack();
-        setVisible(true);
     }
 
     public JButton getStartGameButton() {
@@ -78,5 +77,13 @@ public class JFMainMenu extends JFrame {
 
     public JButton getExitButton() {
         return exitButton;
+    }
+
+    public void showSelf(){
+        setVisible(true);
+    }
+
+    public void hideSelf(){
+        setVisible(false);
     }
 }

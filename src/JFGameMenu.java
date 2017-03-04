@@ -54,7 +54,14 @@ public class JFGameMenu extends JFrame{
 
         setLocationRelativeTo(null);
         pack();
+    }
+
+    public void showSelf(){
         setVisible(true);
+    }
+
+    public void hideSelf(){
+        setVisible(false);
     }
 
     public JButton getBackButton() {
