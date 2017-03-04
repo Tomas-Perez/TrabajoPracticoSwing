@@ -12,16 +12,25 @@ public class Controller{
     private JFGameMenu jFGameMenu;
     private JFMainMenu jFMainMenu;
     private JFSettings jFSettings;
+    private Settings settings;
 
     public Controller() {
         this.jFGameMenu = new JFGameMenu();
         this.jFMainMenu = new JFMainMenu();
         this.jFSettings = new JFSettings();
+        settings = new Settings();
 
-        jFMainMenu.getStartGameButton().addActionListener(new startGameButtonAO());
-        jFMainMenu.getSettingsButton().addActionListener(new settingsButtonAO());
-        jFMainMenu.getExitButton().addActionListener(new exitButtonAO());
-        jFGameMenu.getBackButton().addActionListener(new gameBackButtonAO());
+        jFMainMenu.getStartGameButton().addActionListener(new StartGameButtonAO());
+        jFMainMenu.getSettingsButton().addActionListener(new SettingsButtonAO());
+        jFMainMenu.getExitButton().addActionListener(new ExitButtonAO());
+        jFGameMenu.getBackButton().addActionListener(new GameBackButtonAO());
+        jFSettings.getBackButton().addActionListener(new SettingsBackButtonAO());
+        jFSettings.getmOffRbutton().addActionListener(new MusicRbuttonAO());
+        jFSettings.getmOnRbutton().addActionListener(new MusicRbuttonAO());
+        jFSettings.getsOffRbutton().addActionListener(new SoundRbuttonAO());
+        jFSettings.getsOnRbutton().addActionListener(new SoundRbuttonAO());
+        jFSettings.getShadowsCb().addActionListener(new ShadowsCbAO());
+        jFSettings.getAntialiasingCb().addActionListener(new AAliasingCbAO());
 
         jFMainMenu.showSelf();
     }
@@ -30,7 +39,7 @@ public class Controller{
      * Hides JFMainMenu window and shows JFGameMenu window.
      */
 
-    public class startGameButtonAO implements ActionListener{
+    class StartGameButtonAO implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             jFMainMenu.hideSelf();
@@ -42,7 +51,7 @@ public class Controller{
      * Hides JFMainMenu window and shows JFSettings window.
      */
 
-    public class settingsButtonAO implements ActionListener{
+    class SettingsButtonAO implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             jFMainMenu.hideSelf();
@@ -54,7 +63,7 @@ public class Controller{
      * Closes the program.
      */
 
-    public class exitButtonAO implements ActionListener{
+    class ExitButtonAO implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
@@ -65,11 +74,63 @@ public class Controller{
      * Hides JFGameMenu window and shows JFMainMenu window.
      */
 
-    public class gameBackButtonAO implements ActionListener{
+    class GameBackButtonAO implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             jFGameMenu.hideSelf();
             jFMainMenu.showSelf();
         }
     }
+
+    /**\
+     * Hides JFSettings window and shows JFMainMenu window.
+     */
+    class SettingsBackButtonAO implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            jFSettings.hideSelf();
+            jFMainMenu.showSelf();
+        }
+    }
+
+    /**
+     * Updates sound state in model.
+     */
+    class SoundRbuttonAO implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            settings.switchSound();
+        }
+    }
+
+    /**
+     * Updates music state in model.
+     */
+    class MusicRbuttonAO implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            settings.switchMusic();
+        }
+    }
+
+    /**
+     * Updates shadows state in model.
+     */
+    class ShadowsCbAO implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            settings.switchShadows();
+        }
+    }
+
+    /**
+     * Updates aAliasing state in model.
+     */
+    class AAliasingCbAO implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            settings.switchAAliasing();
+        }
+    }
+
 }

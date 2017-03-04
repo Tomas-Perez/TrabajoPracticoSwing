@@ -23,9 +23,9 @@ import java.awt.*;
 
 public class JFSettings extends JFrame{
 
-    JButton backButton;
-    JRadioButton sOnRbutton,sOffRbutton,mOnRbutton,mOffRbutton;
-    JCheckBox shadowsCb,antialiasingCb;
+    private JButton backButton;
+    private JRadioButton sOnRbutton,sOffRbutton,mOnRbutton,mOffRbutton;
+    private JCheckBox shadowsCb,antialiasingCb;
 
     public JFSettings(){
         super("Settings");
