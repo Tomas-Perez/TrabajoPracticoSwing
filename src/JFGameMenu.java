@@ -5,6 +5,15 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ *
+ * JFGameMenu draws a window in the middle of the screen that shows a Pac-Man image and a 'Back' button.
+ *
+ * @author  Tomas Perez Molina
+ * @author  Manuel Pedrozo
+ *
+ */
+
 public class JFGameMenu extends JFrame{
 
     private JButton backButton;
@@ -14,6 +23,7 @@ public class JFGameMenu extends JFrame{
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Setting default 'blank space' size
         Dimension fillerMinSize = new Dimension(20, 20);
         Dimension fillerPrefSize = new Dimension(20, 20);
         Dimension fillerMaxSize = new Dimension(20, 20);
@@ -31,6 +41,7 @@ public class JFGameMenu extends JFrame{
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
+        //Display image
         try {
             BufferedImage gameImage = ImageIO.read(new File("./Image/Pac-man.png"));
             JLabel imageLabel = new JLabel(new ImageIcon(gameImage));
@@ -42,6 +53,7 @@ public class JFGameMenu extends JFrame{
 
         middleContainer.add(new Box.Filler(fillerMinSize, fillerPrefSize, fillerMaxSize));
 
+        //Back
         backButton = new JButton("Back");
         Dimension buttonDimension = new Dimension(100,60);
         backButton.setMaximumSize(buttonDimension);
@@ -57,13 +69,25 @@ public class JFGameMenu extends JFrame{
         pack();
     }
 
+    /**
+     * Shows the window.
+     */
+
     public void showSelf(){
         setVisible(true);
     }
 
+    /**
+     * Hides the window.
+     */
+
     public void hideSelf(){
         setVisible(false);
     }
+
+    /**
+     * @return the back button
+     */
 
     public JButton getBackButton() {
         return backButton;

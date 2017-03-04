@@ -1,6 +1,26 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ *
+ * JFMainMenu draws a window in the middle of the screen that shows buttons and checkboxes including:
+ * <ul>
+ *     <li>Sound ON/OFF</li>
+ *     <li>Music ON/OFF</li>
+ *     <li>Graphics:
+ *     <ul>
+ *         <li>Shadows checkbox</li>
+ *         <li>Antialiasing checkbox</li>
+ *     </ul>
+ *     </li>
+ *     <li>Back</li>
+ * </ul>
+ *
+ * @author  Tomas Perez Molina
+ * @author  Manuel Pedrozo
+ *
+ */
+
 public class JFSettings extends JFrame{
 
     JButton backButton;
@@ -13,6 +33,7 @@ public class JFSettings extends JFrame{
 
         setLayout(new BoxLayout(getContentPane(),BoxLayout.Y_AXIS));
 
+        // Setting default 'blank space' size
         Dimension fillerMinSize = new Dimension(20, 10);
         Dimension fillerPrefSize = new Dimension(20, 10);
         Dimension fillerMaxSize = new Dimension(20, 10);
@@ -90,37 +111,81 @@ public class JFSettings extends JFrame{
         pack();
     }
 
+    /**
+     *
+     * @return the back button.
+     */
+
     public JButton getBackButton() {
         return backButton;
     }
+
+    /**
+     *
+     * @return the sound on button.
+     */
 
     public JRadioButton getsOnRbutton() {
         return sOnRbutton;
     }
 
+    /**
+     *
+     * @return the sound off button.
+     */
+
     public JRadioButton getsOffRbutton() {
         return sOffRbutton;
     }
+
+    /**
+     *
+     * @return the music on button.
+     */
 
     public JRadioButton getmOnRbutton() {
         return mOnRbutton;
     }
 
+    /**
+     *
+     * @return the music off button.
+     */
+
     public JRadioButton getmOffRbutton() {
         return mOffRbutton;
     }
+
+    /**
+     *
+     * @return the shadows checkbox.
+     */
 
     public JCheckBox getShadowsCb() {
         return shadowsCb;
     }
 
+    /**
+     *
+     * @return the antialiasing checkbox.
+     */
+
     public JCheckBox getAntialiasingCb() {
         return antialiasingCb;
     }
 
+    /**
+     * Shows the window.
+     */
+
+
     public void showSelf(){
         setVisible(true);
     }
+
+    /**
+     * Hides the window.
+     */
 
     public void hideSelf(){
         setVisible(false);

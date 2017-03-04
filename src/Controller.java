@@ -1,6 +1,13 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Controller manages the functionality of JFGameMenu, JFMainMenu and JFSettings windows, with listeners for each button.
+ *
+ * @author Tomas Perez Molina
+ * @author Manuel Pedrozo
+ */
+
 public class Controller{
     private JFGameMenu jFGameMenu;
     private JFMainMenu jFMainMenu;
@@ -19,6 +26,10 @@ public class Controller{
         jFMainMenu.showSelf();
     }
 
+    /**
+     * Hides JFMainMenu window and shows JFGameMenu window.
+     */
+
     public class startGameButtonAO implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -26,6 +37,10 @@ public class Controller{
             jFGameMenu.showSelf();
         }
     }
+
+    /**
+     * Hides JFMainMenu window and shows JFSettings window.
+     */
 
     public class settingsButtonAO implements ActionListener{
         @Override
@@ -35,12 +50,20 @@ public class Controller{
         }
     }
 
+    /**
+     * Closes the program.
+     */
+
     public class exitButtonAO implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
         }
     }
+
+    /**
+     * Hides JFGameMenu window and shows JFMainMenu window.
+     */
 
     public class gameBackButtonAO implements ActionListener{
         @Override

@@ -1,6 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ *
+ * JFMainMenu draws a window in the middle of the screen that displays the title of the project 'Trabajo Practico Swing',
+ * a subtitle stating the authors of the project and 3 buttons 'Start Game', 'Settings' and 'Exit'.
+ *
+ * @author  Tomas Perez Molina
+ * @author  Manuel Pedrozo
+ *
+ */
+
 public class JFMainMenu extends JFrame {
 
     private JButton startGameButton;
@@ -11,6 +21,7 @@ public class JFMainMenu extends JFrame {
         super("Main Menu");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Setting default 'blank space' size
         Dimension fillerMinSize = new Dimension(20, 20);
         Dimension fillerPrefSize = new Dimension(20, 20);
         Dimension fillerMaxSize = new Dimension(20, 20);
@@ -72,21 +83,41 @@ public class JFMainMenu extends JFrame {
         pack();
     }
 
+    /**
+     * @return The start game button
+     */
+
     public JButton getStartGameButton() {
         return startGameButton;
     }
+
+    /**
+     * @return The settings button
+     */
 
     public JButton getSettingsButton() {
         return settingsButton;
     }
 
+    /**
+     * @return The exit button
+     */
+
     public JButton getExitButton() {
         return exitButton;
     }
 
+    /**
+     * Shows the window.
+     */
+
     public void showSelf(){
         setVisible(true);
     }
+
+    /**
+     * Hides the window.
+     */
 
     public void hideSelf(){
         setVisible(false);
