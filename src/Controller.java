@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -25,10 +26,10 @@ public class Controller{
         jFMainMenu.getExitButton().addActionListener(new ExitButtonAO());
         jFGameMenu.getBackButton().addActionListener(new GameBackButtonAO());
         jFSettings.getBackButton().addActionListener(new SettingsBackButtonAO());
-        jFSettings.getmOffRbutton().addActionListener(new MusicRbuttonAO());
-        jFSettings.getmOnRbutton().addActionListener(new MusicRbuttonAO());
-        jFSettings.getsOffRbutton().addActionListener(new SoundRbuttonAO());
-        jFSettings.getsOnRbutton().addActionListener(new SoundRbuttonAO());
+        jFSettings.getmOffRbutton().addActionListener(new MusicOffRbuttonAO());
+        jFSettings.getmOnRbutton().addActionListener(new MusicOnRbuttonAO());
+        jFSettings.getsOffRbutton().addActionListener(new SoundOffRbuttonAO());
+        jFSettings.getsOnRbutton().addActionListener(new SoundOnRbuttonAO());
         jFSettings.getShadowsCb().addActionListener(new ShadowsCbAO());
         jFSettings.getAntialiasingCb().addActionListener(new AAliasingCbAO());
 
@@ -94,27 +95,47 @@ public class Controller{
     }
 
     /**
-     * Updates sound state in model.
+     * Sets sound to true in settings.
      */
-    class SoundRbuttonAO implements ActionListener{
+    class SoundOnRbuttonAO implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            settings.switchSound();
+            settings.setSound(true);
         }
     }
 
     /**
-     * Updates music state in model.
+     * Sets sound to false in settings.
      */
-    class MusicRbuttonAO implements ActionListener{
+    class SoundOffRbuttonAO implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            settings.switchMusic();
+            settings.setSound(false);
         }
     }
 
     /**
-     * Updates shadows state in model.
+     * Sets music to true in settings.
+     */
+    class MusicOnRbuttonAO implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            settings.setMusic(true);
+        }
+    }
+
+    /**
+     * Sets music to false in settings.
+     */
+    class MusicOffRbuttonAO implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            settings.setMusic(false);
+        }
+    }
+
+    /**
+     * Switches shadows state in model.
      */
     class ShadowsCbAO implements ActionListener{
         @Override
@@ -124,7 +145,7 @@ public class Controller{
     }
 
     /**
-     * Updates aAliasing state in model.
+     * Switches aAliasing state in model.
      */
     class AAliasingCbAO implements ActionListener{
         @Override

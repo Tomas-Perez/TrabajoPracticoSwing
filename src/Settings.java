@@ -45,33 +45,35 @@ public class Settings {
     }
 
     /**
-     * Switches the sound boolean value, prints settings state in the console.
+     * sound setter.
+     * @param sound
      */
-    public void switchSound(){
-        sound = !sound;
+    public void setSound(boolean sound) {
+        this.sound = sound;
         printStatus();
     }
 
     /**
-     * Switches the music boolean value, prints settings state in the console.
+     * music setter.
+     * @param music
      */
-    public void switchMusic(){
-        music = !music;
+    public void setMusic(boolean music) {
+        this.music = music;
         printStatus();
     }
 
     /**
-     * Switches the shadows boolean value, prints settings state in the console.
+     * Switches shadows value.
      */
-    public void switchShadows(){
+    public void switchShadows() {
         shadows = !shadows;
         printStatus();
     }
 
     /**
-     * Switches the aAliasing boolean value, prints settings state in the console.
+     * Switches aAliasing value.
      */
-    public void switchAAliasing(){
+    public void switchAAliasing() {
         aAliasing = !aAliasing;
         printStatus();
     }
